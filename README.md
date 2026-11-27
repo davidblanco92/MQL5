@@ -1,27 +1,31 @@
-# MQL5
+# EA CONSTRUCTOR
 
-Plataforma web original para crear, gestionar y compilar proyectos MQL5.
+Constructor visual de estrategias con exportación de código fuente inicial para MetaTrader 4 y MetaTrader 5. No requiere registro: la configuración vive en el estado de la sesión del navegador y no se envía a un servidor.
 
-## Objetivo
+## Funciones del MVP
 
-- Editor web de código MQL5
-- Gestión de proyectos y archivos
-- Cola de compilaciones
-- Descarga de artefactos `.ex5`
-- Integración futura con MetaEditor/MetaQuotes
+- Selección de instrumento, temporalidad y plataforma MT4/MT5.
+- Reglas de cruce EMA y filtro RSI.
+- Parámetros editables de riesgo, stop loss y take profit.
+- Vista previa de estrategia y código generado.
+- Descarga de archivo `.mq4` o `.mq5`.
 
-## Stack inicial
+## Ejecutar localmente
 
-- Next.js 14
-- TypeScript
-- PostgreSQL
-- Prisma
-- NextAuth
-- Docker
-
-## Desarrollo
+Requiere Node.js 20 o superior.
 
 ```bash
 npm install
 npm run dev
 ```
+
+Abre http://localhost:3000. Para validar tipos y construir la aplicación:
+
+```bash
+npm run typecheck
+npm run build
+```
+
+## Alcance y seguridad
+
+El código exportado es una plantilla inicial de estrategia, no una garantía de rentabilidad ni asesoramiento financiero. Revísalo, compílalo en MetaEditor y pruébalo en Strategy Tester/cuenta demo antes de cualquier uso real. Este MVP no se conecta a brokers, no ejecuta operaciones y no ofrece backtesting real.

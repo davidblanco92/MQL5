@@ -1,7 +1,7 @@
 FROM node:20-alpine AS dependencies
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+COPY package.json ./
+RUN npm install
 
 FROM node:20-alpine AS build
 WORKDIR /app
